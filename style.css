@@ -11,31 +11,6 @@
 }
 
 
-.about-image {
-  animation: pulseImage 2s ease-in-out infinite;
-}
-
-@keyframes pulseImage {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-@keyframes rotateImage {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .about-text {
   color: #ffffff;
@@ -93,27 +68,50 @@
     transform: translateY(0);
   }
 }
-
-.name-text, .image-loading-animation {
+.hello-anim{
   opacity: 0;
-  animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes image-animation {
+  0% { opacity: 0; }
+  20% { opacity: 100%; }
+  30% { animation: fade-in 1s ease-out; }
+  0% { transform: rotateY(0deg) translateZ(0px); }
+  50% { transform: rotateY(360deg) translateZ(-30px) scale(1.1); }
+  100% { transform: rotateY(0deg) translateZ(0px); }
+  
+}
+
+.image-animation {
+  animation: image-animation 15s ease-in-out infinite;
+}
+
+
+
+
+
+.name-text{
+  opacity: 0;
+  animation: fade-in 1s ease-out;
   animation-fill-mode: forwards;
 }
 
 .name-text:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.name-text:nth-child(2) {
   animation-delay: 0.4s;
 }
 
-.name-text:nth-child(3) {
+.name-text:nth-child(2) {
   animation-delay: 0.6s;
 }
 
-.image-loading-animation {
+.name-text:nth-child(3) {
   animation-delay: 0.8s;
+}
+
+.image-loading-animation {
+  animation-delay: .6s;
 }
 
 
